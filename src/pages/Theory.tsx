@@ -76,7 +76,7 @@ const Theory = () => {
             className="cursor-pointer hover:shadow-lg transition-all duration-300 transform hover:scale-105 bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
             onClick={() => {
               if (unit.id) {
-                navigate(`/theory/${unit.id}`);
+                navigate(`/teoria/${unit.id}`);
               }
             }}
           >

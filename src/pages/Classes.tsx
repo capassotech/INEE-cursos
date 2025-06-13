@@ -90,7 +90,7 @@ const Classes = () => {
                 className="cursor-pointer hover:shadow-md transition-all duration-200 bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600 relative"
                 onClick={() => {
                   if (classItem.id) {
-                    navigate(`/classes/${module.id}/${classItem.id}`);
+                    navigate(`/clases/${module.id}/${classItem.id}`);
                   }
                 }}
               >

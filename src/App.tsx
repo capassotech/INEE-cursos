@@ -28,11 +28,11 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/curso" element={<Curso />} />
-              <Route path="/classes" element={<Classes />} />
-              <Route path="/classes/:moduleId/:classId" element={<ClassDetail />} />
-              <Route path="/theory" element={<Theory />} />
-              <Route path="/theory/:unitId" element={<TheoryDetail />} />
-              <Route path="/search" element={<Search />} />
+              <Route path="/clases" element={<Classes />} />
+              <Route path="/clases/:moduleId/:classId" element={<ClassDetail />} />
+              <Route path="/teoria" element={<Theory />} />
+              <Route path="/teoria/:unitId" element={<TheoryDetail />} />
+              <Route path="/busqueda" element={<Search />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>

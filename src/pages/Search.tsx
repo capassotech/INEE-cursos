@@ -39,7 +39,7 @@ const Search = () => {
       title: 'Anatomía y Fisiología del Ejercicio',
       description: 'Sistema muscular, cardiovascular y metabolismo energético',
       readTime: '25 min',
-      path: '/theory/unidad-1'
+      path: '/teoria/unidad-1'
     },
     {
       id: 'unidad-3',
@@ -47,7 +47,7 @@ const Search = () => {
       title: 'Biomecánica del Movimiento',
       description: 'Análisis técnico de ejercicios y planos de movimiento',
       readTime: '35 min',
-      path: '/theory/unidad-3'
+      path: '/teoria/unidad-3'
     },
     {
       id: 'clase-3-1',
@@ -64,7 +64,7 @@ const Search = () => {
       title: 'Nutrición Deportiva',
       description: 'Macronutrientes, hidratación y suplementación',
       readTime: '28 min',
-      path: '/theory/unidad-4'
+      path: '/teoria/unidad-4'
     }
   ];
 

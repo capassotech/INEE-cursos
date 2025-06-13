@@ -13,7 +13,7 @@ const Header = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      navigate(`/busqueda?q=${encodeURIComponent(searchQuery.trim())}`);
     }
   };
 
@@ -48,7 +48,7 @@ const Header = () => {
               variant="ghost"
               size="icon"
               className="md:hidden"
-              onClick={() => navigate("/search")}
+              onClick={() => navigate("/busqueda")}
             >
               <Search className="w-5 h-5" />
             </Button>

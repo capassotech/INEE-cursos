@@ -59,7 +59,7 @@ const ClassDetail = () => {
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => navigate('/classes')}
+          onClick={() => navigate('/clases')}
         >
           <ArrowLeft className="w-5 h-5" />
         </Button>

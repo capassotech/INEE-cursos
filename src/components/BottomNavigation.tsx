@@ -9,9 +9,9 @@ const BottomNavigation = () => {
 
   const navItems = [
     { icon: Home, label: "Inicio", path: "/" },
-    { icon: Play, label: "Clases", path: "/classes" },
-    { icon: BookOpen, label: "Teoría", path: "/theory" },
-    { icon: Search, label: "Buscar", path: "/search" },
+    { icon: Play, label: "Clases", path: "/clases" },
+    { icon: BookOpen, label: "Teoría", path: "/teoria" },
+    { icon: Search, label: "Buscar", path: "/busqueda" },
   ];
 
   return (

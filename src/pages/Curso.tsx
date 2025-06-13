@@ -83,7 +83,7 @@ const Curso = () => {
 
         <Card 
           className="bg-black text-white border-0 shadow-lg cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          onClick={() => navigate("/theory")}
+          onClick={() => navigate("/teoria")}
         >
           <CardHeader>
             <div className="flex items-center justify-between">
@@ -153,7 +153,7 @@ const Curso = () => {
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => navigate("/theory")}
+              onClick={() => navigate("/teoria")}
               className="border-white text-white hover:bg-white/10"
             >
               Estudiar Teoría

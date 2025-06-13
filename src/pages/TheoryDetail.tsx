@@ -73,7 +73,7 @@ const TheoryDetail = () => {
         <Button 
           variant="ghost" 
           size="icon"
-          onClick={() => navigate('/theory')}
+          onClick={() => navigate('/teoria')}
         >
           <ArrowLeft className="w-5 h-5" />
         </Button>

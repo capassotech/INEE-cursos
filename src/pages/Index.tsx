@@ -1,5 +1,5 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -50,7 +50,7 @@ const Index = () => {
             <Card
               key={course.id}
               className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
-              onClick={() => navigate("/curso")}
+              onClick={() => navigate("/clases")}
             >
               <CardContent className="p-0 flex flex-col sm:flex-row">
                 {/* Imagen del curso */}
@@ -99,7 +99,7 @@ const Index = () => {
 
       {/* Botón para adquirir más cursos */}
       <a
-        href="https://inee-beta.web.app/courses"
+        href="https://inee-beta.web.app/formaciones"
         target="_blank"
         rel="noopener noreferrer"
         className="block"
