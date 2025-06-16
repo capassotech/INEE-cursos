@@ -1,19 +1,28 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Play, Clock, Users } from "lucide-react";
+import { Play, Clock, Users, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { allCourses } from "@/lib/coursesMock";
+import { Button } from "@/components/ui/button";
 
 const Classes = () => {
   const navigate = useNavigate();
-  const { id } = useParams<{ id: string }>();
-  const course = allCourses.find(c => c.id === id);
+  const { courseId } = useParams<{ courseId: string }>();
+  const course = allCourses.find(c => c.id === courseId);
 
   return (
     <div className="container mx-auto px-4 py-6 space-y-6">
       <div className="text-center space-y-2">
+        <Button
+          variant="ghost"
+          onClick={() => navigate("/")}
+          className="mb-4 justify-start pl-0"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Volver a todos los cursos
+        </Button>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
           {course?.title || "Curso"}
         </h1>
@@ -41,8 +50,8 @@ const Classes = () => {
                 key={classItem.id || crypto.randomUUID()}
                 className="cursor-pointer hover:shadow-md transition-all duration-200 bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600 relative"
                 onClick={() => {
-                  if (classItem.id) {
-                    navigate(`/clases/${module.id}/${classItem.id}`);
+                  if (classItem.id && classItem.videoUrl && classItem.videoUrl !== "") {
+                    navigate(`/clases/${courseId}/${module.id}/${classItem.id}`);
                   }
                 }}
               >

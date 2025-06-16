@@ -14,10 +14,10 @@ const Index = () => {
         "Descubre paso a paso cómo validar tu idea de negocio, crear un MVP, buscar financiamiento y lanzar tu producto al mercado.",
       type: 'ON_DEMAND' as const,
       image: "https://i.ytimg.com/vi/xrv2K3p6sfM/maxresdefault.jpg",
-      duration: "25 horas",
+      duration: "4 horas",
       instructor: "Laura Domínguez",
       level: "Inicial",
-      modules: 8,
+      modules: 4,
       progress: 45,
       features: [
         "Guía de plan de negocios",
