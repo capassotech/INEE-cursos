@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -27,17 +28,62 @@ const Index = () => {
     }
   ];
 
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const banners = [
+    "https://universidad.gruposuperior.com.co/wp-content/uploads/2021/05/BANNER-PROMOCIONAL-1.png",
+    "https://alehlatam.org/wp-content/uploads/2024/12/BANNER-V-Curso-HCC.png",
+    "https://calate.com.mx/wp-content/uploads/2024/02/banner-tuyo-cursoserigrafia-cursosublimacio-monterrey-2048x583-1.png",
+     "https://cui.edu.ar/images/becas/promoverano_ed_bannerweb.jpg",
+  ];
+
+  // Carrusel automático
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBannerIndex((prev) =>
+        prev === banners.length - 1 ? 0 : prev + 1
+      );
+    }, 4000); // Cambia cada 4 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-6 space-y-8">
-      {/* Hero Section */}
-      <div className="text-center space-y-4 mb-10">
-        <div className="inline-flex items-center justify-center rounded-full mb-4">
-          <img src="/logo.png" alt="Logo" className="w-40" />
+      {/* Carrusel de banners */}
+      <div className="relative w-full overflow-hidden rounded-xl shadow-lg mb-10">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentBannerIndex * 100}%)` }}
+        >
+          {banners.map((banner, index) => (
+            <div key={index} className="w-full flex-shrink-0">
+              <img
+                src={banner}
+                alt={`Banner ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
-        <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto">
-          Instituto de Negocios Emprendedor Empresarial
-        </p>
+
+        {/* Puntos de navegación */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-colors ${index === currentBannerIndex ? "bg-white" : "bg-white/50"
+                }`}
+              onClick={() => setCurrentBannerIndex(index)}
+              aria-label={`Ir a banner ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
+
+      {/* Texto debajo del banner */}
+      <p className="text-gray-600 dark:text-gray-300 text-center max-w-md mx-auto mt-4">
+        Instituto de Negocios Emprendedor Empresarial
+      </p>
 
       {/* Courses List */}
       <div className="space-y-4">
