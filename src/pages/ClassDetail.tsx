@@ -1,71 +1,56 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Play, Clock, Users, Download, Share } from "lucide-react";
-import { url } from "inspector";
+import { allCourses } from "@/lib/coursesMock";
 
 const ClassDetail = () => {
-  const { moduleId, classId } = useParams();
+  const { moduleId, classId } = useParams<{ moduleId: string; classId: string }>();
   const navigate = useNavigate();
 
-  // Mock data - en una app real esto vendría de una API
-  // const classData = {
-  //   title: "Anatomía del esqueleto humano",
-  //   description: "En esta clase se desarrolla una introducción clara al esqueleto humano abordando cuatro ejes fundamentales: su definición y concepto general, la clasificación y funciones de los huesos, los tejidos que lo componen, y la ubicación anatómica de todos los huesos del cuerpo. Un repaso esencial para comprender la base estructural del cuerpo humano y su importancia en el movimiento y la práctica segura del fitness grupal.",
-  //   duration: "70 min",
-  //   instructor: "Prof. Laura Martino",
-  //   module: "Módulo 1: Anatomía y Fisiología",
-  //   videoUrl: "https://drive.google.com/file/d/11t1DmY5OsDrakooS2RFsNNfUQTALOkh8/preview", // Placeholder
-  //   objectives: [
-  //     "Definición, concepto",
-  //     "Los huesos",
-  //     "Tejidos",
-  //     "Ubicación anatómica de todos los huesos"
-  //   ],
-  //   resources: [
-  //     { name: "Aparato locomotor", type: "PDF", url: "https://drive.google.com/file/d/1ch4A3_KQTMm3MK5HkgttW61lZE8bp4aZ/view?usp=sharing" },
-  //   ]
-  // };
+  let courseData = null;
+  let moduleData = null;
+  let classData = null;
 
-  const classData = {
-    id: "1",
-    title: "Cómo iniciar tu propio negocio desde cero",
-    description: "Descubre paso a paso cómo validar tu idea de negocio, crear un MVP, buscar financiamiento y lanzar tu producto al mercado.",
-    longDescription: "Este curso completo te guiará a través de todo el proceso de creación de un negocio exitoso. Aprenderás desde la validación inicial de tu idea hasta el lanzamiento final de tu producto. Incluye casos reales de startups exitosas, plantillas descargables y acceso a una comunidad exclusiva de emprendedores.",
-    duration: "25 horas",
-    type: 'ON_DEMAND' as const,
-    module: "Módulo 1: Validación de la idea de negocio",
-    image: "https://i.ytimg.com/vi/xrv2K3p6sfM/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=2_zMt853gTw",
-    instructor: "Laura Domínguez",
-    objectives: [
-      "Módulo 1: Validación de la idea de negocio",
-      "Módulo 2: Investigación de mercado",
-      "Módulo 3: Creación del MVP",
-      "Módulo 4: Estrategias de financiamiento",
-      "Módulo 5: Lanzamiento al mercado"
-    ],
-    resources: [
-      { name: "Negociacion efectiva", type: "PDF", url: "https://materiales.axontraining.com/materiales/28/Axon_28_4418.Pdf" },
-    ]
+  // Búsqueda de curso, módulo y clase por ID
+  for (const course of allCourses) {
+    for (const module of course.modules) {
+      const foundClass = module.classes.find((clase) => clase.id === classId);
+      if (foundClass && module.id === moduleId) {
+        courseData = course;
+        moduleData = module;
+        classData = foundClass;
+        break;
+      }
+    }
+    if (classData) break;
+  }
+
+  if (!classData || !moduleData || !courseData) {
+    return (
+      <div className="container mx-auto px-4 py-6 text-center">
+        <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Clase no encontrada</h1>
+        <p className="text-gray-600 dark:text-gray-300 mt-2">
+          No pudimos encontrar la clase que buscas.
+        </p>
+        <Button onClick={() => navigate("/clases")} className="mt-4">
+          Volver a las clases
+        </Button>
+      </div>
+    );
   }
 
   return (
     <div className="container mx-auto px-4 py-6 space-y-6">
       {/* Header */}
       <div className="flex items-center space-x-4">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => navigate('/clases')}
-        >
+        <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
           <ArrowLeft className="w-5 h-5" />
         </Button>
         <div>
           <Badge variant="outline" className="mb-2">
-            {classData.module}
+            {moduleData.title}
           </Badge>
           <h1 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100">
             {classData.title}
@@ -76,12 +61,12 @@ const ClassDetail = () => {
       {/* Video Player */}
       <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
         <CardContent className="p-0">
-          <div className="aspect-video bg-gray-900 rounded-t-lg relative">
+          <div className="aspect-video bg-gray-900 rounded-t-lg relative overflow-hidden">
             <iframe
               src={classData.videoUrl}
               title={classData.title}
-              className="w-full h-full rounded-t-lg"
               allowFullScreen
+              className="w-full h-full"
             />
           </div>
 
@@ -113,72 +98,74 @@ const ClassDetail = () => {
         </CardContent>
       </Card>
 
-      {/* Description and Objectives */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-          <CardContent className="p-6">
-            <h2 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">
-              Descripción
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              {classData.description}
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-          <CardContent className="p-6">
-            <h2 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">
-              Objetivos de Aprendizaje
-            </h2>
-            <ul className="space-y-2">
-              {classData.objectives.map((objective, index) => (
-                <li key={index} className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-600 dark:text-gray-300">{objective}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Resources */}
+      {/* Descripción */}
       <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
         <CardContent className="p-6">
-          <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
-            Material Complementario
+          <h2 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">
+            Descripción
           </h2>
-          <div className="space-y-3">
-            {classData.resources.map((resource, index) => (
-              <div key={index} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center">
-                    <Download className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-900 dark:text-gray-100">{resource.name}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{resource.type}</p>
-                  </div>
-                </div>
-                <a
-                  href={resource.url}
-                  download
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button variant="outline" size="sm">
-                    Descargar
-                  </Button>
-                </a>
-              </div>
-            ))}
-          </div>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            {classData.description}
+          </p>
         </CardContent>
       </Card>
 
+      {/* Objetivos */}
+      <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <CardContent className="p-6">
+          <h2 className="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">
+            Objetivos de Aprendizaje
+          </h2>
+          <ul className="space-y-2">
+            {classData.objectives.map((objective, index) => (
+              <li key={index} className="flex items-start space-x-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                <span className="text-gray-600 dark:text-gray-300">{objective}</span>
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
 
-      {/* Navigation */}
+      {/* Material complementario */}
+      {classData.resources.length > 0 && (
+        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <CardContent className="p-6">
+            <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              Material Complementario
+            </h2>
+            <div className="space-y-3">
+              {classData.resources.map((resource, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center">
+                      <Download className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900 dark:text-gray-100">
+                        {resource.name}
+                      </p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {resource.type}
+                      </p>
+                    </div>
+                  </div>
+                  <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm">
+                      Descargar
+                    </Button>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Navegación */}
       <div className="flex justify-between">
         <Button variant="outline">
           <ArrowLeft className="w-4 h-4 mr-2" />

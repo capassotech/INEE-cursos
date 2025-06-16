@@ -50,7 +50,7 @@ const Index = () => {
             <Card
               key={course.id}
               className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
-              onClick={() => navigate("/clases")}
+              onClick={() => navigate(`/clases/${course.id}`)}
             >
               <CardContent className="p-0 flex flex-col sm:flex-row">
                 {/* Imagen del curso */}
