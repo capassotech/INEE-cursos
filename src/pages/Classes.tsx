@@ -12,6 +12,8 @@ const Classes = () => {
   const { courseId } = useParams<{ courseId: string }>();
   const course = allCourses.find(c => c.id === courseId);
 
+  window.scrollTo(0, 0);
+
   return (
     <div className="container mx-auto px-4 py-6 space-y-6">
       <div className="text-center space-y-2">
