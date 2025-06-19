@@ -23,10 +23,10 @@ const Classes = () => {
           className="mb-4 justify-start pl-0"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Volver a todos los cursos
+          Volver a todas las formaciones
         </Button>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100">
-          {course?.title || "Curso"}
+          {course?.title || "Formación"}
         </h1>
         <p className="text-gray-600 dark:text-gray-300">
           Videos organizados por módulo temático

@@ -152,9 +152,9 @@ const Index = () => {
       >
         <Card className="bg-primary hover:bg-primary/90 border-2 border-primary text-white dark:bg-primary dark:hover:bg-primary/90 dark:border-primary transition-colors duration-300">
           <CardHeader className="text-center py-8">
-            <h3 className="text-xl font-bold">Adquirir más cursos</h3>
+            <h3 className="text-xl font-bold">Adquirir más formaciones</h3>
             <p className="text-white/80 mt-2">
-              Explora nuestra plataforma de cursos completos
+              Explora nuestra plataforma de formaciones completas
             </p>
           </CardHeader>
         </Card>
