@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="pb-20 md:pb-8">
         {children}
       </main>
-      <BottomNavigation />
+      {/* <BottomNavigation /> */}
     </div>
   );
 };
