@@ -5,13 +5,13 @@ import { getDatabase } from "firebase/database";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "inee-cursos.firebaseapp.com",
-    projectId: "inee-cursos",
-    storageBucket: "inee-cursos.firebasestorage.app",
-    messagingSenderId: "",
-    appId: "",
-    measurementId: "G-"
+    apiKey: "AIzaSyBNB8GmROSyE3iA11GLCTFd-oOLwCNuTUg",
+    authDomain: "inee-plataforma.firebaseapp.com",
+    projectId: "inee-plataforma",
+    storageBucket: "inee-plataforma.firebasestorage.app",
+    messagingSenderId: "491937360604",
+    appId: "1:491937360604:web:d72b0061e44abda2342219",
+    measurementId: "G-137LJ0S49X"
 };
 
 // Inicializa Firebase
