@@ -241,7 +241,7 @@ const ClassDetail = () => {
       <div className="md:col-span-1 space-y-4">
         <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 sticky top-6">
           <CardHeader>
-            <CardTitle className="text-base font-semibold">Clases del Módulo</CardTitle>
+            <CardTitle className="text-base font-semibold">Clases del módulo</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             <ul className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -257,20 +257,24 @@ const ClassDetail = () => {
                       }`}
                   >
                     <div
-                      className={`w-5 h-5 mr-3 flex items-center justify-center rounded-full ${completedClasses.includes(clase.id)
-                        ? "bg-green-500 text-white"
-                        : "border border-gray-300 dark:border-gray-600"
+                      className={`w-5 h-5 mr-3 flex items-center justify-center rounded-full aspect-square ${completedClasses.includes(clase.id)
+                          ? "bg-green-500 text-white"
+                          : "border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
                         }`}
                     >
                       {completedClasses.includes(clase.id) && (
                         <CheckCircle className="w-3 h-3" />
                       )}
                     </div>
+
                     <span
-                      className={`${clase.id === classId
-                        ? "font-medium text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300"
-                        }`}
+                      className={`
+                                ${clase.id === classId
+                          ? "font-medium text-blue-600 dark:text-blue-400"
+                          : "text-gray-700 dark:text-gray-300"
+                        }
+                                truncate block max-w-full
+                              `}
                     >
                       {clase.title}
                     </span>

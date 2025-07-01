@@ -13,7 +13,7 @@ const Index = () => {
     "https://universidad.gruposuperior.com.co/wp-content/uploads/2021/05/BANNER-PROMOCIONAL-1.png",
     "https://alehlatam.org/wp-content/uploads/2024/12/BANNER-V-Curso-HCC.png",
     "https://calate.com.mx/wp-content/uploads/2024/02/banner-tuyo-cursoserigrafia-cursosublimacio-monterrey-2048x583-1.png",
-     "https://cui.edu.ar/images/becas/promoverano_ed_bannerweb.jpg",
+    "https://cui.edu.ar/images/becas/promoverano_ed_bannerweb.jpg",
   ];
 
   // Carrusel automático
@@ -60,10 +60,11 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Texto debajo del banner */}
-      <p className="text-gray-600 dark:text-gray-300 text-center max-w-md mx-auto mt-4">
-        Instituto de Negocios Emprendedor Empresarial
-      </p>
+      <div className="text-center mt-4">
+        <div className="rounded-lg flex items-center justify-center">
+          <img src="/logo.png" alt="Logo" className="w-52" />
+        </div>
+      </div>
 
       {/* Courses List */}
       <div className="space-y-4">

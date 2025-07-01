@@ -4,105 +4,100 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 0 0% 100%;              /* Fondo blanco */
+    --foreground: 0 0% 10%;                /* Casi negro */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 39 16% 82%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 39 16% 82%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 240 29% 46%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 353 42% 38%;                /* Color vino del logo */
+    --primary-foreground: 0 0% 100%;       /* Texto blanco sobre primary */
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    --secondary: 42 61% 56%;               /* Mostaza del logo */
+    --secondary-foreground: 0 0% 10%;      /* Texto oscuro sobre mostaza */
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 39 16% 82%;
+    --muted-foreground: 0 0% 30%;          /* Gris oscuro */
 
-    --accent: 16 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 61% 56%;                  /* Igual que secundario (mostaza) */
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 240 29% 46%;
+    --destructive: 0 45% 49%;              /* Rojo oscuro */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 16 100% 50%;
+    --border: 0 0% 75%;                    /* Gris medio para bordes */
+    --input: 0 0% 75%;
+    --ring: 42 61% 56%;                    /* Mostaza (accent) */
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 39 16% 90%;      /* Un poco más claro que fondo */
+    --sidebar-foreground: 0 0% 10%;
 
-    --sidebar-foreground: 0 0% 0%;
-
-    --sidebar-primary: 16 100% 50%;
-
+    --sidebar-primary: 353 42% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent: 42 61% 56%;
+    --sidebar-accent-foreground: 0 0% 10%;
 
-    --sidebar-accent-foreground: 0 0% 0%;
-
-    --sidebar-border: 0 0% 90%;
-
-    --sidebar-ring: 240 29% 46%;
+    --sidebar-border: 0 0% 75%;
+    --sidebar-ring: 42 61% 56%;
   }
 
   .dark {
-    --background: 0 0% 0%;
+    --background: 0 0% 10%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 0%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 0%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 240 29% 46%;
+    --primary: 353 42% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 240 1% 30%;               /* Gris oscuro (para contrastar) */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 240 29% 46%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 61% 56%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 240 29% 46%;
+    --destructive: 0 45% 49%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 240 29% 46%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 42 61% 56%;
 
-    --sidebar-background: 0 0% 10%;
+    --sidebar-background: 0 0% 15%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 240 29% 46%;
+    --sidebar-primary: 353 42% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 240 1% 30%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 240 29% 46%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 42 61% 56%;
   }
 
   .light {
-    --primary: 240 29% 46%;
+    --primary: 353 42% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --accent: 240 29% 46%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 61% 56%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 240 29% 46%;
+    --destructive: 0 45% 49%;
     --destructive-foreground: 0 0% 100%;
 
-    --ring: 240 29% 46%;
-
-    --sidebar-ring: 240 29% 46%;
+    --ring: 42 61% 56%;
+    --sidebar-ring: 42 61% 56%;
   }
 }
 
