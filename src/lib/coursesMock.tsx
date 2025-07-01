@@ -28,7 +28,7 @@ export const allCourses = [
             title: "Introducción a MASTER DE MOLDERIA Y CONFECCION DE CAMPERON TIPO PARKA",
             duration: "22 min",
             description: "En esta clase introductoria, aprenderás los conceptos básicos de la moldería y su importancia en la confección de prendas.",
-            videoUrl: "https://youtu.be/k6GFz1kw1bY?si=lEf81Qfu7UpPEP58",
+            videoUrl: "https://www.youtube.com/embed/k6GFz1kw1bY?si=lEf81Qfu7UpPEP58",
             thumbnail: "https://http2.mlstatic.com/D_NQ_NP_766761-MLA82625997088_032025-O.webp",
             profesor: "Rocío Ailén Krämer",
             resources: [
@@ -51,7 +51,7 @@ export const allCourses = [
             duration: "39 min",
             description:
               "En esta clase, aprenderás a crear el patrón base del cuerpo y la manga, fundamentales para la confección de cualquier prenda.",
-            videoUrl: "https://youtu.be/mvCttGLNwE0?si=TWYd9d3vjGH9Jx9d",
+            videoUrl: "https://www.youtube.com/embed/mvCttGLNwE0?si=TWYd9d3vjGH9Jx9d",
             thumbnail: "https://patterncos.com/wp-content/uploads/2018/06/Manga_sastre_Tutorial_01-1024x683.png",
             profesor: "Rocío Ailén Krämer",
             resources: [
@@ -75,7 +75,7 @@ export const allCourses = [
             duration: "32 min",
             description:
               "En esta clase, nos enfocaremos en la moldería específica para el camperón tipo parka, incluyendo detalles como bolsillos y capucha.",
-            videoUrl: "https://youtu.be/ZYuizK01p-U?si=Wb3V1qokJReRB7fU",
+            videoUrl: "https://www.youtube.com/embed/ZYuizK01p-U?si=Wb3V1qokJReRB7fU",
             thumbnail: "https://i.pinimg.com/564x/47/92/49/47924957309ea96cee07ea9f525bad67.jpg",
             profesor: "Rocío Ailén Krämer",
             resources: [
@@ -106,7 +106,7 @@ export const allCourses = [
             duration: "22 min",
             description:
               "En esta clase, presentaremos las partes cortadas de la campera tipo parka, incluyendo las vistas de forrería y los bolsillos.",
-            videoUrl: "https://youtu.be/f7MpCD_BXH8?si=U38KnMb_-vtyjQRQ",
+            videoUrl: "https://www.youtube.com/embed/f7MpCD_BXH8?si=U38KnMb_-vtyjQRQ",
             thumbnail: "https://www.localesbambaci.com.ar/cdn/shop/files/11MRUB2213-SUNDAYPARKA-NEGRO_2x_905f8935-47b3-44c6-b973-b9ef7f099690_480x480.webp?v=1684275467",
             profesor: "Rocío Ailén Krämer",
             resources: [
@@ -126,12 +126,12 @@ export const allCourses = [
             duration: "49 min",
             description:
               "",
-            videoUrl: "https://youtu.be/5VAO3KFsk0E?si=VA2EIqDQfndGzUbX",
+            videoUrl: "https://www.youtube.com/embed/5VAO3KFsk0E?si=VA2EIqDQfndGzUbX",
             thumbnail: "https://acdn-us.mitiendanube.com/stores/001/924/058/products/ms901-35-21-e70bd2273023df0f6316839148963374-240-0.jpg",
             profesor: "Rocío Ailén Krämer",
             resources: [
               {
-                name: "Introducción a la Moldería y Confección",
+                name: "Armado, cierre, colocación de manga, capucha y pestaña",
                 type: "PDF",
                 url: "/ejemplo-pdf.pdf",
               },
