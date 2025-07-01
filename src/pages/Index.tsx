@@ -62,7 +62,16 @@ const Index = () => {
 
       <div className="text-center mt-4">
         <div className="rounded-lg flex items-center justify-center">
-          <img src="/logo.png" alt="Logo" className="w-52" />
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="w-52 block dark:hidden"
+          />
+          <img
+            src="/logo-blanco.png"
+            alt="Logo blanco"
+            className="w-52 hidden dark:block"
+          />
         </div>
       </div>
 
