@@ -134,7 +134,7 @@ const ClassDetail = () => {
                   </div>
                   <div className="flex items-center space-x-1">
                     <Users className="w-4 h-4" />
-                    <span>{classData.instructor}</span>
+                    <span>{classData.profesor}</span>
                   </div>
                 </div>
 

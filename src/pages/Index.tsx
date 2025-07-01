@@ -3,30 +3,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { allCourses } from "@/lib/coursesMock";
 
 const Index = () => {
   const navigate = useNavigate();
-
-  const courses = [
-    {
-      id: "1",
-      title: "Cómo iniciar tu propio negocio desde cero",
-      description:
-        "Descubre paso a paso cómo validar tu idea de negocio, crear un MVP, buscar financiamiento y lanzar tu producto al mercado.",
-      type: 'ON_DEMAND' as const,
-      image: "https://i.ytimg.com/vi/xrv2K3p6sfM/maxresdefault.jpg",
-      duration: "4 horas",
-      instructor: "Laura Domínguez",
-      level: "Inicial",
-      modules: 4,
-      progress: 45,
-      features: [
-        "Guía de plan de negocios",
-        "Ejemplos reales de startups exitosas",
-        "Acceso a comunidad de emprendedores"
-      ]
-    }
-  ];
 
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const banners = [
@@ -92,7 +72,7 @@ const Index = () => {
         </h2>
 
         <div className="grid grid-cols-1 gap-4">
-          {courses.map((course) => (
+          {allCourses.map((course) => (
             <Card
               key={course.id}
               className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
@@ -104,7 +84,7 @@ const Index = () => {
                   <img
                     src={course.image}
                     alt={course.title}
-                    className="object-cover w-full h-full transition-transform hover:scale-105"
+                    className="object-cover w-full h-48 transition-transform hover:scale-105"
                   />
                 </div>
 
@@ -122,7 +102,7 @@ const Index = () => {
                           {course.level}
                         </span>
                         <span className="text-xs">
-                          {course.modules} módulos
+                          {course.modules.length} módulos
                         </span>
                       </div>
                       <ChevronRight className="w-5 h-5 text-gray-400" />

@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate("/")}>
             <div className="rounded-lg flex items-center justify-center">
-              <img src="/logo.png" alt="Logo" className="w-12" />
+              <img src="/logo.png" alt="Logo" className="w-20" />
             </div>
           </div>
           
